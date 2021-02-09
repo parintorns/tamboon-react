@@ -1,4 +1,4 @@
 {
   "setupFilesAfterEnv": ["<rootDir>/test-setup.js"],
-  "collectCoverageFrom": ["**/src/pages/**.js*"]
+  "collectCoverageFrom": ["**/src/pages/**.js*", "**/src/components/**/**.js*"]
 }

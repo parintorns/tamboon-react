@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Actions should select amount 1`] = `
+"<styled.div>
+  <styled.div />
+  <styled.div>
+    <styled.div>
+      Charity Name
+    </styled.div>
+    <styled.button id=\\"btn-donate\\" onClick={[Function: onClick]}>
+      Donate
+    </styled.button>
+  </styled.div>
+  <styled.div visible={false}>
+    <styled.div id=\\"btn-close\\" onClick={[Function: onClick]} />
+    <styled.div>
+      Select the amount to donate (USD)
+    </styled.div>
+    <label>
+      <input id=\\"amount-item-0\\" type=\\"radio\\" name=\\"payment\\" value={10} onClick={[Function: onClick]} />
+      10
+    </label>
+    <label>
+      <input id=\\"amount-item-1\\" type=\\"radio\\" name=\\"payment\\" value={20} onClick={[Function: onClick]} />
+      20
+    </label>
+    <label>
+      <input id=\\"amount-item-2\\" type=\\"radio\\" name=\\"payment\\" value={50} onClick={[Function: onClick]} />
+      50
+    </label>
+    <label>
+      <input id=\\"amount-item-3\\" type=\\"radio\\" name=\\"payment\\" value={100} onClick={[Function: onClick]} />
+      100
+    </label>
+    <styled.button id=\\"btn-pay\\" onClick={[Function: onClick]}>
+      Pay
+    </styled.button>
+  </styled.div>
+</styled.div>"
+`;
+
+exports[`Render should render CardDonate 1`] = `
+"<styled.div>
+  <styled.div />
+  <styled.div>
+    <styled.div>
+      Charity Name
+    </styled.div>
+    <styled.button id=\\"btn-donate\\" onClick={[Function: onClick]}>
+      Donate
+    </styled.button>
+  </styled.div>
+  <styled.div visible={false}>
+    <styled.div id=\\"btn-close\\" onClick={[Function: onClick]} />
+    <styled.div>
+      Select the amount to donate (USD)
+    </styled.div>
+    <label>
+      <input id=\\"amount-item-0\\" type=\\"radio\\" name=\\"payment\\" value={10} onClick={[Function: onClick]} />
+      10
+    </label>
+    <label>
+      <input id=\\"amount-item-1\\" type=\\"radio\\" name=\\"payment\\" value={20} onClick={[Function: onClick]} />
+      20
+    </label>
+    <label>
+      <input id=\\"amount-item-2\\" type=\\"radio\\" name=\\"payment\\" value={50} onClick={[Function: onClick]} />
+      50
+    </label>
+    <label>
+      <input id=\\"amount-item-3\\" type=\\"radio\\" name=\\"payment\\" value={100} onClick={[Function: onClick]} />
+      100
+    </label>
+    <styled.button id=\\"btn-pay\\" onClick={[Function: onClick]}>
+      Pay
+    </styled.button>
+  </styled.div>
+</styled.div>"
+`;

@@ -8,7 +8,9 @@ import {
   Button,
   Modal,
   ButtonClose,
-  Label
+  Label,
+  Body,
+  Option
 } from './styles'
 
 const payments = [10, 20, 50, 100]
@@ -20,7 +22,7 @@ export default function Charity(props) {
 
   return (
     <Wrapper>
-      <Image />
+      <Image src={`/images/${charity.image}`} />
 
       <Footer>
         <Title>{charity.name}</Title>
@@ -31,32 +33,37 @@ export default function Charity(props) {
       </Footer>
 
       <Modal visible={visible}>
-        <ButtonClose id="btn-close" onClick={() => setVisible(false)} />
+        <ButtonClose id="btn-close" onClick={() => setVisible(false)}>
+          X
+        </ButtonClose>
 
-        <Label>{`Select the amount to donate (${charity.currency})`}</Label>
+        <Body>
+          <Label>{`Select the amount to donate (${charity.currency})`}</Label>
 
-        {payments.map((amount, index) => (
-          <label key={`amount-option-item-${index}`}>
-            <input
-              id={`amount-item-${index}`}
-              type="radio"
-              name="payment"
-              value={amount}
-              onClick={(e) => {
-                setAmount(e.target.value)
-              }}
-            />
+          <Option>
+            {payments.map((amount, index) => (
+              <label key={`amount-option-item-${index}`}>
+                <input
+                  id={`amount-item-${index}`}
+                  type="radio"
+                  name="payment"
+                  value={amount}
+                  onClick={(e) => {
+                    setAmount(e.target.value)
+                  }}
+                />
 
-            {amount}
-          </label>
-        ))}
-
-        <Button
-          id="btn-pay"
-          onClick={() => onDonate(charity.id, amount, charity.currency)}
-        >
-          Pay
-        </Button>
+                {amount}
+              </label>
+            ))}
+          </Option>
+          <Button
+            id="btn-pay"
+            onClick={() => onDonate(charity.id, amount, charity.currency)}
+          >
+            Pay
+          </Button>
+        </Body>
       </Modal>
     </Wrapper>
   )

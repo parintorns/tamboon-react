@@ -6,6 +6,8 @@ import Charity from 'components/Charity'
 import Spinner from 'components/Spinner'
 import Error from 'components/Error'
 
+import { Title, Container, Content } from './styles'
+
 function App() {
   const { charities, getCharities, loading, error } = useCharity()
 
@@ -16,21 +18,23 @@ function App() {
   const handleDonate = () => {}
 
   return (
-    <>
-      <div>Omise Tamboon React</div>
+    <Container>
+      <Title>Omise Tamboon React</Title>
 
       {loading && <Spinner />}
 
       {error && <Error />}
 
-      {charities?.map((charity, index) => (
-        <Charity
-          key={`charity-item-${index}`}
-          charity={charity}
-          onDonate={handleDonate}
-        />
-      ))}
-    </>
+      <Content>
+        {charities?.map((charity, index) => (
+          <Charity
+            key={`charity-item-${index}`}
+            charity={charity}
+            onDonate={handleDonate}
+          />
+        ))}
+      </Content>
+    </Container>
   )
 }
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import {
   Wrapper,
@@ -18,7 +18,13 @@ const payments = [10, 20, 50, 100]
 export default function Charity(props) {
   const { charity, onDonate } = props
   const [visible, setVisible] = useState(false)
-  const [amount, setAmount] = useState(0)
+  const [amount, setAmount] = useState(10)
+
+  const handlePay = () => {
+    onDonate(charity.id, amount, charity.currency)
+
+    setVisible(false)
+  }
 
   return (
     <Wrapper>
@@ -41,26 +47,25 @@ export default function Charity(props) {
           <Label>{`Select the amount to donate (${charity.currency})`}</Label>
 
           <Option>
-            {payments.map((amount, index) => (
-              <label key={`amount-option-item-${index}`}>
+            {payments.map((payment, index) => (
+              <label key={`payment-${charity.id}-option-item-${index}`}>
                 <input
-                  id={`amount-item-${index}`}
+                  id={`payment-${charity.id}-option-item-${index}`}
                   type="radio"
                   name="payment"
-                  value={amount}
-                  onClick={(e) => {
-                    setAmount(e.target.value)
+                  value={payment}
+                  checked={amount === payment}
+                  onChange={(e) => {
+                    setAmount(Number(e.target.value))
                   }}
                 />
 
-                {amount}
+                {payment}
               </label>
             ))}
           </Option>
-          <Button
-            id="btn-pay"
-            onClick={() => onDonate(charity.id, amount, charity.currency)}
-          >
+
+          <Button id="btn-pay" onClick={handlePay}>
             Pay
           </Button>
         </Body>

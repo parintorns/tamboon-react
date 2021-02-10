@@ -80,7 +80,7 @@ export const ButtonClose = styled.button`
 
 export const Label = styled.div``
 
-export const Option = styled.div`
+export const Option = styled.form`
   display: flex;
   width: 100%;
   justify-content: space-between;

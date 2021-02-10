@@ -37,7 +37,7 @@ exports[`Actions should select amount 1`] = `
           100
         </label>
       </styled.div>
-      <styled.button id=\\"btn-pay\\" onClick={[Function: onClick]}>
+      <styled.button id=\\"btn-pay\\" onClick={[Function: handlePay]}>
         Pay
       </styled.button>
     </styled.div>
@@ -82,7 +82,7 @@ exports[`Render should render CardDonate 1`] = `
           100
         </label>
       </styled.div>
-      <styled.button id=\\"btn-pay\\" onClick={[Function: onClick]}>
+      <styled.button id=\\"btn-pay\\" onClick={[Function: handlePay]}>
         Pay
       </styled.button>
     </styled.div>

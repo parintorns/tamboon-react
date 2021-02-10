@@ -9,13 +9,21 @@ import Error from 'components/Error'
 import { Title, Container, Content } from './styles'
 
 function App() {
-  const { charities, getCharities, loading, error } = useCharity()
+  const { charities, getCharities, pay, loading, error, message } = useCharity()
 
   useEffect(() => {
     getCharities()
   }, [])
 
-  const handleDonate = () => {}
+  const handleDonate = (charityId, amount, charityCurrency) => {
+    pay(charityId, amount, charityCurrency)
+  }
+
+  useEffect(() => {
+    if (message !== '') {
+      console.log(message)
+    }
+  }, [message])
 
   return (
     <Container>

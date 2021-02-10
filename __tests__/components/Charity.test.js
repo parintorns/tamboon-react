@@ -47,7 +47,7 @@ describe('Actions', () => {
   })
 
   it('should select amount', () => {
-    const inputAmount = wrapper.find({ id: 'amount-item-0' })
+    const inputAmount = wrapper.find({ id: 'payment-1-option-item-0' })
 
     expect(inputAmount).toHaveLength(1)
 
@@ -63,6 +63,6 @@ describe('Actions', () => {
 
     btnPay.simulate('click')
 
-    expect(props.onDonate).toHaveBeenCalledWith(1, 0, 'USD')
+    expect(props.onDonate).toHaveBeenCalledWith(1, 10, 'USD')
   })
 })

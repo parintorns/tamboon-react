@@ -19,24 +19,24 @@ exports[`Actions should select amount 1`] = `
       <styled.div>
         Select the amount to donate (USD)
       </styled.div>
-      <styled.div>
+      <styled.form>
         <label>
-          <input id=\\"amount-item-0\\" type=\\"radio\\" name=\\"payment\\" value={10} onClick={[Function: onClick]} />
+          <input id=\\"payment-1-option-item-0\\" type=\\"radio\\" name=\\"payment\\" value={10} checked={true} onChange={[Function: onChange]} />
           10
         </label>
         <label>
-          <input id=\\"amount-item-1\\" type=\\"radio\\" name=\\"payment\\" value={20} onClick={[Function: onClick]} />
+          <input id=\\"payment-1-option-item-1\\" type=\\"radio\\" name=\\"payment\\" value={20} checked={false} onChange={[Function: onChange]} />
           20
         </label>
         <label>
-          <input id=\\"amount-item-2\\" type=\\"radio\\" name=\\"payment\\" value={50} onClick={[Function: onClick]} />
+          <input id=\\"payment-1-option-item-2\\" type=\\"radio\\" name=\\"payment\\" value={50} checked={false} onChange={[Function: onChange]} />
           50
         </label>
         <label>
-          <input id=\\"amount-item-3\\" type=\\"radio\\" name=\\"payment\\" value={100} onClick={[Function: onClick]} />
+          <input id=\\"payment-1-option-item-3\\" type=\\"radio\\" name=\\"payment\\" value={100} checked={false} onChange={[Function: onChange]} />
           100
         </label>
-      </styled.div>
+      </styled.form>
       <styled.button id=\\"btn-pay\\" onClick={[Function: handlePay]}>
         Pay
       </styled.button>
@@ -64,24 +64,24 @@ exports[`Render should render CardDonate 1`] = `
       <styled.div>
         Select the amount to donate (USD)
       </styled.div>
-      <styled.div>
+      <styled.form>
         <label>
-          <input id=\\"amount-item-0\\" type=\\"radio\\" name=\\"payment\\" value={10} onClick={[Function: onClick]} />
+          <input id=\\"payment-1-option-item-0\\" type=\\"radio\\" name=\\"payment\\" value={10} checked={true} onChange={[Function: onChange]} />
           10
         </label>
         <label>
-          <input id=\\"amount-item-1\\" type=\\"radio\\" name=\\"payment\\" value={20} onClick={[Function: onClick]} />
+          <input id=\\"payment-1-option-item-1\\" type=\\"radio\\" name=\\"payment\\" value={20} checked={false} onChange={[Function: onChange]} />
           20
         </label>
         <label>
-          <input id=\\"amount-item-2\\" type=\\"radio\\" name=\\"payment\\" value={50} onClick={[Function: onClick]} />
+          <input id=\\"payment-1-option-item-2\\" type=\\"radio\\" name=\\"payment\\" value={50} checked={false} onChange={[Function: onChange]} />
           50
         </label>
         <label>
-          <input id=\\"amount-item-3\\" type=\\"radio\\" name=\\"payment\\" value={100} onClick={[Function: onClick]} />
+          <input id=\\"payment-1-option-item-3\\" type=\\"radio\\" name=\\"payment\\" value={100} checked={false} onChange={[Function: onChange]} />
           100
         </label>
-      </styled.div>
+      </styled.form>
       <styled.button id=\\"btn-pay\\" onClick={[Function: handlePay]}>
         Pay
       </styled.button>

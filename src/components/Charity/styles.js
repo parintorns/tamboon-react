@@ -8,6 +8,9 @@ export const Wrapper = styled.div`
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.14);
   -webkit-box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.14);
   -moz-box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.14);
+  @media (max-width: 768px) {
+    width: 300px;
+  }
 `
 
 export const Image = styled.img`

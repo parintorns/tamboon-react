@@ -64,13 +64,14 @@ export const Body = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 60%;
+  width: 100%;
+  height: 100%;
 `
 
 export const ButtonClose = styled.button`
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 15px;
+  right: 10px;
   align-self: flex-end;
   background-color: transparent;
   border-width: 0px;
@@ -78,10 +79,11 @@ export const ButtonClose = styled.button`
   color: #666666;
 `
 
-export const Label = styled.div``
+export const Label = styled.p``
 
 export const Option = styled.form`
   display: flex;
-  width: 100%;
   justify-content: space-between;
+  width: 50%;
+  margin-bottom: 20px;
 `

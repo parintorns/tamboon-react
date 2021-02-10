@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 import {
   Wrapper,
@@ -12,6 +12,8 @@ import {
   Body,
   Option
 } from './styles'
+
+import { CloseIcon } from './icons'
 
 const payments = [10, 20, 50, 100]
 
@@ -40,7 +42,7 @@ export default function Charity(props) {
 
       <Modal visible={visible}>
         <ButtonClose id="btn-close" onClick={() => setVisible(false)}>
-          X
+          <CloseIcon />
         </ButtonClose>
 
         <Body>

@@ -13,12 +13,12 @@ exports[`Actions should select amount 1`] = `
   </styled.div>
   <styled.div visible={false}>
     <styled.button id=\\"btn-close\\" onClick={[Function: onClick]}>
-      X
+      <CloseIcon />
     </styled.button>
     <styled.div>
-      <styled.div>
+      <styled.p>
         Select the amount to donate (USD)
-      </styled.div>
+      </styled.p>
       <styled.form>
         <label>
           <input id=\\"payment-1-option-item-0\\" type=\\"radio\\" name=\\"payment\\" value={10} checked={true} onChange={[Function: onChange]} />
@@ -58,12 +58,12 @@ exports[`Render should render CardDonate 1`] = `
   </styled.div>
   <styled.div visible={false}>
     <styled.button id=\\"btn-close\\" onClick={[Function: onClick]}>
-      X
+      <CloseIcon />
     </styled.button>
     <styled.div>
-      <styled.div>
+      <styled.p>
         Select the amount to donate (USD)
-      </styled.div>
+      </styled.p>
       <styled.form>
         <label>
           <input id=\\"payment-1-option-item-0\\" type=\\"radio\\" name=\\"payment\\" value={10} checked={true} onChange={[Function: onChange]} />

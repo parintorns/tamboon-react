@@ -5,7 +5,12 @@ exports[`Actions should select amount 1`] = `
   <styled.img src=\\"/images/undefined\\" />
   <styled.div>
     <styled.div>
-      Charity Name
+      <styled.div>
+        Charity Name
+      </styled.div>
+      <styled.div>
+        Donation amount: 0.00 USD
+      </styled.div>
     </styled.div>
     <styled.button id=\\"btn-donate\\" onClick={[Function: onClick]}>
       Donate
@@ -50,7 +55,12 @@ exports[`Render should render CardDonate 1`] = `
   <styled.img src=\\"/images/undefined\\" />
   <styled.div>
     <styled.div>
-      Charity Name
+      <styled.div>
+        Charity Name
+      </styled.div>
+      <styled.div>
+        Donation amount: 0.00 USD
+      </styled.div>
     </styled.div>
     <styled.button id=\\"btn-donate\\" onClick={[Function: onClick]}>
       Donate

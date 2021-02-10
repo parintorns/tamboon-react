@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import Error from '../../src/components/Error'
+import Message from '../../src/components/Message'
 
 let wrapper
 
@@ -10,7 +10,7 @@ const props = {
 }
 
 beforeEach(() => {
-  wrapper = shallow(<Error {...props} />)
+  wrapper = shallow(<Message {...props} />)
 })
 
 describe('Render', () => {

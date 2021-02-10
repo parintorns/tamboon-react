@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react'
 
 import { useCharity } from 'hooks'
@@ -9,7 +10,15 @@ import Error from 'components/Error'
 import { Title, Container, Content } from './styles'
 
 function App() {
-  const { charities, getCharities, pay, loading, error, message } = useCharity()
+  const {
+    charities,
+    getCharities,
+    pay,
+    loading,
+    error,
+    message,
+    setMessage
+  } = useCharity()
 
   useEffect(() => {
     getCharities()
@@ -19,19 +28,13 @@ function App() {
     pay(charityId, amount, charityCurrency)
   }
 
-  useEffect(() => {
-    if (message !== '') {
-      console.log(message)
-    }
-  }, [message])
-
   return (
     <Container>
       <Title>Omise Tamboon React</Title>
 
       {loading && <Spinner />}
 
-      {error && <Error />}
+      {error && <Error message={error?.message} />}
 
       <Content>
         {charities?.map((charity, index) => (
@@ -39,6 +42,8 @@ function App() {
             key={`charity-item-${index}`}
             charity={charity}
             onDonate={handleDonate}
+            message={message}
+            setMessage={setMessage}
           />
         ))}
       </Content>

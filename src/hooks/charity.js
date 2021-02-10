@@ -22,7 +22,7 @@ export function useCharity() {
 
       setCharities(response.data)
     } catch (error) {
-      setError(error)
+      setError({ message: 'Error on loading data' })
     }
 
     setLoading(false)
@@ -48,7 +48,7 @@ export function useCharity() {
 
       setMessage(`Thank you for donate ${amount} ${currency}`)
     } catch (error) {
-      setError(error)
+      setError({ message: 'Error on loading data' })
     }
 
     setLoading(false)
@@ -60,6 +60,7 @@ export function useCharity() {
     pay,
     loading,
     error,
-    message
+    message,
+    setMessage
   }
 }

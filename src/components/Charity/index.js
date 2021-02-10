@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useEffect } from 'react'
 
 import {
   Wrapper,
@@ -13,20 +14,32 @@ import {
   Option
 } from './styles'
 
+import Message from 'components/Message'
 import { CloseIcon } from './icons'
 
 const payments = [10, 20, 50, 100]
 
 export default function Charity(props) {
-  const { charity, onDonate } = props
+  const { charity, onDonate, message, setMessage } = props
   const [visible, setVisible] = useState(false)
   const [amount, setAmount] = useState(10)
+
+  const [paid, setPaid] = useState(false)
 
   const handlePay = () => {
     onDonate(charity.id, amount, charity.currency)
 
-    setVisible(false)
+    setPaid(true)
   }
+  useEffect(() => {
+    if (message !== '') {
+      setTimeout(() => {
+        setMessage('')
+        setPaid(false)
+        setVisible(false)
+      }, 2500)
+    }
+  }, [message])
 
   return (
     <Wrapper>
@@ -47,7 +60,6 @@ export default function Charity(props) {
 
         <Body>
           <Label>{`Select the amount to donate (${charity.currency})`}</Label>
-
           <Option>
             {payments.map((payment, index) => (
               <label key={`payment-${charity.id}-option-item-${index}`}>
@@ -67,9 +79,13 @@ export default function Charity(props) {
             ))}
           </Option>
 
-          <Button id="btn-pay" onClick={handlePay}>
-            Pay
-          </Button>
+          {!paid ? (
+            <Button id="btn-pay" onClick={handlePay}>
+              Pay
+            </Button>
+          ) : (
+            <Message message={message} />
+          )}
         </Body>
       </Modal>
     </Wrapper>

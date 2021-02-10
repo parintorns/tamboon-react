@@ -19,14 +19,22 @@ export const Image = styled.img`
 export const Footer = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: baseline;
+  align-items: center;
   margin: 20px;
   justify-content: space-between;
 `
 
 export const Title = styled.div`
-  font-weight: bold;
+  display: flex;
+  flex-direction: column;
 `
+
+export const Name = styled.div`
+  font-weight: bold;
+  margin-bottom: 3px;
+`
+
+export const Donation = styled.div``
 
 export const Button = styled.button`
   background-color: #f9f9f9;

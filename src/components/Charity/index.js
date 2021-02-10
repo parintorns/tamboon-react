@@ -1,11 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react'
+import numeral from 'numeral'
+import { useCharity } from 'hooks'
 
 import {
   Wrapper,
   Image,
   Footer,
   Title,
+  Name,
+  Donation,
   Button,
   Modal,
   ButtonClose,
@@ -21,16 +25,22 @@ const payments = [10, 20, 50, 100]
 
 export default function Charity(props) {
   const { charity, onDonate, message, setMessage } = props
+  const { getCharityDonation } = useCharity()
   const [visible, setVisible] = useState(false)
   const [amount, setAmount] = useState(10)
-
+  const [donation, setDonation] = useState(0)
   const [paid, setPaid] = useState(false)
 
-  const handlePay = () => {
-    onDonate(charity.id, amount, charity.currency)
+  useEffect(() => {
+    getDonation()
+  }, [charity, paid])
 
-    setPaid(true)
+  const getDonation = async () => {
+    const result = await getCharityDonation(charity.id)
+
+    setDonation(result)
   }
+
   useEffect(() => {
     if (message !== '') {
       setTimeout(() => {
@@ -41,12 +51,24 @@ export default function Charity(props) {
     }
   }, [message])
 
+  const handlePay = () => {
+    onDonate(charity.id, amount, charity.currency)
+
+    setPaid(true)
+  }
+
   return (
     <Wrapper>
       <Image src={`/images/${charity.image}`} />
 
       <Footer>
-        <Title>{charity.name}</Title>
+        <Title>
+          <Name>{charity.name}</Name>
+
+          <Donation>{`Donation amount: ${numeral(donation).format('0,0.00')} ${
+            charity.currency
+          }`}</Donation>
+        </Title>
 
         <Button id="btn-donate" onClick={() => setVisible(true)}>
           Donate

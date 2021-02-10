@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Render should render App 1`] = `
-"<div>
-  Omise Tamboon React
-</div>"
-`;

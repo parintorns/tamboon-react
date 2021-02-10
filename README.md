@@ -21,6 +21,17 @@ Install dependencies
 
 ```
 $ npm install
+```
+
+Running server
+
+```
+$ npm run server
+```
+
+Start app
+
+```
 $ npm start
 ```
 
